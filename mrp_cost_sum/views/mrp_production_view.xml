@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="mcs_mrp_production_form_view" model="ir.ui.view">
+            <field name="name">mcs.mrp.production.form.view</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <button name="post_inventory" position="attributes">
+                    <attribute name="groups">mrp.group_mrp_manager</attribute>
+                </button>
+                <field name="origin" position="after">
+                    <field name="currency_id" invisible="1"/>
+                </field>
+<!--
+                <notebook position="inside">
+                    <page string="Costos por producción" invisible="0">
+                        <field name="cost_lines" readonly="1" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="product_id"/>
+                                <field name="move_id"/>
+                                <field name="quantity"/>
+                                <field name="cost_price_unit"/>
+                                <field name="cost_total"/>
+                            </tree>
+                        </field>
+                        <group class="oe_subtotal_footer oe_right">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="cost_sumatory" widget='monetary'
+                                options="{'currency_field': 'currency_id'}" class="oe_subtotal_footer_separator"/>
+                        </group>
+                    </page>
+                </notebook>
+-->
+            </field>
+        </record>
+    </data>
+</odoo>
